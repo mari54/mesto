@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto Россия</title>
+</head>
+
+<body class="page">
+
+    <header class="header">
+      <img src="./images/logo.svg" alt="Логотип сервиса Mesto Россия" class="header__logo" />
+    </header>
+
+    <main class="content">
+
+      <section class="profile" aria-label="Профайл автора с аватаркой и формой редактирования и возможностью добавить фото">
+        <button class="profile__avatar-btn" type="button" title="Аватар пользователя"><img class="profile__avatar" src="./images/avatar.png" alt="Аватар профиля"></button>
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="profile__btn-edit" type="button" title="Редактировать профиль"></button>
+          <p class="profile__about">Исследователь океана</p>
+        </div>
+        <button class="profile__btn-add" type="button" title="Добавить новую фотографию"></button>
+      </section>
+
+      <section class="cards" aria-label="Карточки с интересными местами в России">
+        <ul class="cards__list">
+          <li class="card">
+            <img src="./images/places-karachaevsk.jpg" alt="Фотография Карачаевска с башней" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Карачаевск</h2>
+                  <div class="card__likes-container">
+                    <button class="card__like-button" type="button"></button>
+                  </div>
+              </div>
+          </li>
+          <li class="card">
+            <img src="./images/places-elbrus.jpg" alt="Фотография Эльбруса на фоне" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Гора Эльбрус</h2>
+                  <div class="card__likes-container">
+                    <button class="card__like-button" type="button"></button>
+                  </div>
+              </div>
+          </li>
+          <li class="card">
+            <img src="./images/places-dombai.jpg" alt="Фотография гор Домбая" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Домбай</h2>
+                  <div class="card__likes-container">
+                    <button class="card__like-button" type="button"></button>
+                  </div>
+              </div>
+          </li>
+          <li class="card">
+            <img src="./images/places-baikal.jpg" alt="Фотография озера Байкала" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Байкал</h2>
+                  <div class="card__likes-container">
+                    <button class="card__like-button" type="button"></button>
+                  </div>
+              </div>
+          </li>
+          <li class="card">
+            <img src="./images/places-arkhangelsk.jpg" alt="Фотография церкви Архангельска" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Архангельск</h2>
+                  <div class="card__likes-container">
+                    <button class="card__like-button" type="button"></button>
+                  </div>
+              </div>
+          </li>
+          <li class="card">
+            <img src="./images/places-spb.jpg" alt="Фотография арки Санкт-Петербурга" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Санкт-Петербург</h2>
+                  <div class="card__likes-container">
+                    <button class="card__like-button" type="button"></button>
+                  </div>
+              </div>
+          </li>
+        </ul>
+      </section>
+    
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+
+    <section class="popup">
+      <div class="popup__container">
+        <form class="popup__form" name="profileData" novalidate>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <fieldset class="popup__fieldset">
+            <input class="popup__input popup__input_name" id="name" type="text" name="title" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required>
+            <input class="popup__input popup__input_description" id="description" type="text" name="subtitle" placeholder="Исследователь океана" minlength="2" maxlength="200" required>
+          </fieldset>
+          <button class="popup__btn-save" type="submit" title="Сохранить">Сохранить</button>
+        </form>
+        <button class="popup__btn-close" type="button" title="Закрыть"></button>
+      </div>
+    </section>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
