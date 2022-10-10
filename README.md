@@ -9,5 +9,5 @@
 * Попап редактирования профиля: открытие-закрытие формы, изменение имени и описании пользователя
 
 **Ссылка на Гихаб**
-* [Ссылка на GitHub Pages](https://mari54.github.io/russian-travel/)
+* [Ссылка на GitHub Pages](https://mari54.github.io/mesto/)
 * [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A155)
