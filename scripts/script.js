@@ -1,12 +1,12 @@
-let openProfileForm = document.querySelector(".profile__btn-edit");
-let saveProfile = document.querySelector(".popup__btn-save");
-let nameProfile = document.querySelector(".profile__name");
-let infoProfile = document.querySelector(".profile__about");
-let modal = document.querySelector(".popup");
-let form = document.querySelector(".popup__form");
-let nameInput = document.querySelector(".popup__input_name");
-let infoInput = document.querySelector(".popup__input_description");
-let closeProfileForm = document.querySelector(".popup__btn-close");
+let openProfileForm = document.querySelector(".profile__btn-edit");      // Кнопка редактирования профиля
+let saveProfile = document.querySelector(".popup__btn-save");            // Кнопка сохранения профиля в попапе
+let nameProfile = document.querySelector(".profile__name");              // Имя рядом с аватаркой
+let infoProfile = document.querySelector(".profile__about");             // Описание, работа под именем
+let modal = document.querySelector(".popup");                            // Попап
+let form = document.querySelector(".popup__form");                       // Попап-форма редактирования профиля
+let nameInput = document.querySelector(".popup__input_type_name");            // Введение имени в форме попапа
+let infoInput = document.querySelector(".popup__input_type_description");     // Введение описания, работы в форме попапа
+let closeProfileForm = document.querySelector(".popup__btn-close");      // Кнопка-крестик закрытия формы-попап редактирования профиля
 
 // Метод открытия формы редактирования
 function openProfile() {
@@ -15,22 +15,21 @@ function openProfile() {
   infoInput.value = infoProfile.textContent;
 }
 
-  openProfileForm.addEventListener('click', openProfile);
-
 // Метод закрытия формы редактирования
 function closeProfile() {
   modal.classList.remove("popup_opened");
 }
 
-  closeProfileForm.addEventListener('click', closeProfile);
-
 // Метод сохранения данных в форме
-function formSubmitHandler(a) {
-  a.preventDefault();
+function formSubmitHandler(event) {
+  event.preventDefault();
   nameProfile.textContent = nameInput.value;
   infoProfile.textContent = infoInput.value;
 
-  saveProfile.addEventListener('click', closeProfile);
+  closeProfile();
 }
 
+// Cлушатели событий открытия-закрытия формы редактирования профиля и сохранения
+  openProfileForm.addEventListener('click', openProfile);
+  closeProfileForm.addEventListener('click', closeProfile);
   form.addEventListener('submit', formSubmitHandler); 
