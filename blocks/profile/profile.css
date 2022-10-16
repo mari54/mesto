@@ -2,8 +2,8 @@
   max-width: 880px;
   display: grid;
   grid-template-columns: min-content minmax(min-content, max-content) 30px auto;
-  grid-template-rows: auto min-content;
-  padding: 36px 0 47px;
+  grid-template-rows: 65% min-content;
+  padding: 40px 0 51px;
   margin: 0 auto;
 }
 
@@ -19,7 +19,7 @@
     grid-template-rows: auto auto auto 1fr;
     max-width: 282px;
     width: 100%;
-    padding-top: 38px;
+    padding-top: 42px;
     padding-bottom: 36px;
   }
 }
