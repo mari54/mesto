@@ -25,48 +25,16 @@
 
       <section class="cards" aria-label="Карточки с интересными местами в России">
         <ul class="cards__list">
-          <li class="card">
-            <img src="./images/places-karachaevsk.jpg" alt="Фотография Карачаевска с башней" class="card__image">
+          <template id="template">
+            <li class="card">
+              <img class="card__image" src="./images/places-karachaevsk.jpg" alt="Фотография Карачаевска с башней">
               <div class="card__container">
                 <h2 class="card__title">Карачаевск</h2>
-                  <button class="card__like-button card__like-button_active" type="button"></button>
-              </div>
-          </li>
-          <li class="card">
-            <img src="./images/places-elbrus.jpg" alt="Фотография Эльбруса на фоне" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Гора Эльбрус</h2>
                   <button class="card__like-button" type="button"></button>
+                  <button class="card__remove-button" type="button"></button>
               </div>
-          </li>
-          <li class="card">
-            <img src="./images/places-dombai.jpg" alt="Фотография гор Домбая" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Домбай</h2>
-                  <button class="card__like-button" type="button"></button>
-              </div>
-          </li>
-          <li class="card">
-            <img src="./images/places-baikal.jpg" alt="Фотография озера Байкала" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Байкал</h2>
-                  <button class="card__like-button" type="button"></button>
-              </div>
-          </li>
-          <li class="card">
-            <img src="./images/places-arkhangelsk.jpg" alt="Фотография церкви Архангельска" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Архангельск</h2>
-                  <button class="card__like-button" type="button"></button>
-              </div>
-          </li>
-          <li class="card">
-            <img src="./images/places-spb.jpg" alt="Фотография арки Санкт-Петербурга" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Санкт-Петербург</h2>
-                  <button class="card__like-button" type="button"></button>
-              </div>
-          </li>
+            </li>
+          </template>
         </ul>
       </section>
     
@@ -76,7 +44,7 @@
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <section class="popup popup_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="profileData" novalidate>
@@ -87,6 +55,26 @@
           <button class="popup__btn-save" type="submit" title="Сохранить">Сохранить</button>
         </form>
         <button class="popup__btn-close" type="button" title="Закрыть"></button>
+      </div>
+    </section>
+    <section class="popup popup_place">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" name="placeData" novalidate>
+          <fieldset class="popup__fieldset">
+            <input class="popup__input popup__input_type_place" id="input-place" type="text" name="title" placeholder="Название" required>
+            <input class="popup__input popup__input_type_link" id="input-link" type="url" name="link" placeholder="Ссылка на картинку" required>
+          </fieldset>
+          <button class="popup__btn-save" type="submit" title="Сохранить">Создать</button>
+        </form>
+        <button class="popup__btn-close" type="button" title="Закрыть"></button>
+      </div>
+    </section>
+    <section class="popup popup_picture">
+      <div class="popup__box">
+        <button class="popup__btn-close" type="button"></button>
+        <img class="popup__image">
+        <p class="popup__description"></p>
       </div>
     </section>
 
