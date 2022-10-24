@@ -147,7 +147,7 @@ formElementPopupPlace.addEventListener('submit', handlePopupPlaceFormSubmit);
 
 function closeByEscape(evt) {
   if (evt.key === "Escape") {
-    const activePopup = document.querySelector("popup_opened");
+    const activePopup = document.querySelector('.popup_opened');
     closePopup(activePopup);
   }
 }
