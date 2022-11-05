@@ -60,19 +60,28 @@ function closePopup(item) {
   item.removeEventListener("keydown", closeByOverlay);
 }
 
-// Закрытие форм-попапа кнопкой
+// Закрытие форм-попапов кнопкой
 const closeButtons = document.querySelectorAll(".popup__btn-close");
 closeButtons.forEach((button) => {
   const popup = button.closest(".popup");
   button.addEventListener("click", () => closePopup(popup));
 });
 
+// Закрытие форм-попапов кликом на оверлей
 const closeByOverlay = (evt) => {
   if (evt.target.classList.contains("popup_opened")) {
     const popup = evt.target;
     closePopup(popup);
   }
 };
+
+// Закрытие форм-попапов нажатием на Escape
+function closeByEscape(evt) {
+  if (evt.key === "Escape") {
+    const activePopup = document.querySelector(".popup_opened");
+    closePopup(activePopup);
+  }
+}
 
 // Метод сохранения данных в форме редактирования
 function handleProfileFormSubmit(event) {
@@ -143,10 +152,3 @@ function handlePopupPlaceFormSubmit(evt) {
   closePopup(popupPlace);
 }
 formElementPopupPlace.addEventListener("submit", handlePopupPlaceFormSubmit);
-
-function closeByEscape(evt) {
-  if (evt.key === "Escape") {
-    const activePopup = document.querySelector(".popup_opened");
-    closePopup(activePopup);
-  }
-}
