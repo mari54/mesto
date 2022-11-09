@@ -1,27 +1,27 @@
 // функция, показывающая ошибку при заполнении формы.
-const showInputError = (form, input, errorMessage) => {
+const showInputError = (form, input, errorMessage, config) => {
   const errorElement = form.querySelector(`.${input.id}-error`);
 
-  input.classList.add('popup__input_type_error');
+  input.classList.add(config.inputErrorClass);
   errorElement.textContent = errorMessage;
-  errorElement.classList.add('popup__form-error_active'); 
+  errorElement.classList.add(config.errorClass);
 };
 
-// Функция, удаляющая ошибку, если все правильно. 
-const hideInputError = (form, input) => {
+// Функция, удаляющая ошибку, если все правильно
+const hideInputError = (form, input, config) => {
   const errorElement = form.querySelector(`.${input.id}-error`);
 
-  input.classList.remove('popup__input_type_error');
-  errorElement.classList.remove('popup__form-error_active');
+  input.classList.remove(config.inputErrorClass);
+  errorElement.classList.remove(config.errorClass);
   errorElement.textContent = '';
 };
 
-// Функция, которая проверяет валидность поля
-const isValid = (form, input) => {
+// Функция, проверяющая валидность поля
+const isValid = (form, input, config) => {
   if (!input.validity.valid) {
-    showInputError(form, input, input.validationMessage);
+    showInputError(form, input, input.validationMessage, config);
   } else {
-    hideInputError(form, input);
+    hideInputError(form, input, config);
   }
 };
 
@@ -33,37 +33,39 @@ const hasInvalidInput = (inputList) => {
 };
 
 // Функция переключения кнопки на неактивную 
-const toggleButtonState = (inputList, button) => {
+const toggleButtonState = (inputList, button, config) => {
   if (hasInvalidInput(inputList)) {
-    button.classList.add('popup__btn-save_inactive');
+    button.setAttribute("disabled", "");
+    button.classList.add(config.inactiveButtonClass);
   } else {
-    button.classList.remove('popup__btn-save_inactive');
+    button.removeAttribute("disabled", "");
+    button.classList.remove(config.inactiveButtonClass);
   }
 };
 
 // Функция, добавляющая обработчик всем полям формы
-const setEventListeners = (form) => {
-  const inputList = Array.from(form.querySelectorAll('.popup__input'));
-  const saveButton = form.querySelector('.popup__btn-save')
+const setEventListeners = (form, config) => {
+  const inputList = Array.from(form.querySelectorAll(config.inputSelector));
+  const saveButton = form.querySelector(config.submitButtonSelector);
   
   inputList.forEach(function(input){
     input.addEventListener('input', () => {
-      isValid(form, input)
-      toggleButtonState(inputList, saveButton);
+      isValid(form, input, config)
+      toggleButtonState(inputList, saveButton, config); // каждому полю вешаем переключатель кнопки на неактивную
     });
   });
 }
 
 // Функция добавления обработчиков всем формам
-const enableValidation = () => { 
-  const formList = Array.from(document.querySelectorAll('.popup__form'));
+const enableValidation = (config) => { 
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
     
   formList.forEach((form) => {
-    setEventListeners(form);
+    setEventListeners(form, config);
   });
 };
 
-// Включение валидации вызовом enableValidation
+// Передаём через config функциям то, что им нужно будет взять в объекте
 enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
