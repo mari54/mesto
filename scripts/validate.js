@@ -35,10 +35,10 @@ const hasInvalidInput = (inputList) => {
 // Функция переключения кнопки на неактивную 
 const toggleButtonState = (inputList, button, config) => {
   if (hasInvalidInput(inputList)) {
-    button.setAttribute("disabled", "");
+    button.setAttribute('disabled', '');
     button.classList.add(config.inactiveButtonClass);
   } else {
-    button.removeAttribute("disabled", "");
+    button.removeAttribute('disabled', '');
     button.classList.remove(config.inactiveButtonClass);
   }
 };
