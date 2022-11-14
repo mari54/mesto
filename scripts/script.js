@@ -123,6 +123,7 @@ function handlePopupPlaceFormSubmit(evt) {
   cardsList.prepend(createCard(values));
   formElementPopupPlace.reset();
   closePopup(popupPlace);
+  buttonSubmitPopupPlace.setAttribute('disabled', '');
   buttonSubmitPopupPlace.classList.add('popup__btn-save_inactive');
 }
 formElementPopupPlace.addEventListener('submit', handlePopupPlaceFormSubmit);

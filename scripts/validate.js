@@ -47,6 +47,8 @@ const toggleButtonState = (inputList, button, config) => {
 const setEventListeners = (form, config) => {
   const inputList = Array.from(form.querySelectorAll(config.inputSelector));
   const saveButton = form.querySelector(config.submitButtonSelector);
+
+  toggleButtonState(inputList, saveButton, config); // деактивируем кнопку при первичном открывании формы
   
   inputList.forEach(function(input){
     input.addEventListener('input', () => {
