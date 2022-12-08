@@ -1,7 +1,7 @@
 .popup__input {
   position: relative;
   width: 100%;
-  margin: 0 0 30px;
+  margin: 0;
   padding: 0 0 9px;
   outline: none;
   border: none;

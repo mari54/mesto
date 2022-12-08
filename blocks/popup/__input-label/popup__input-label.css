@@ -1,0 +1,5 @@
+.popup__input-label {
+    display: flex;
+    flex-direction: column;
+    min-height: 60px;
+}

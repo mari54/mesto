@@ -36,3 +36,4 @@
 @import url(../blocks/popup/__description/popup__description.css);
 @import url(../blocks/popup/__form-error/popup__form-error.css);
 @import url(../blocks/popup/__form-error/_active/popup__form-error_active.css);
+@import url(../blocks/popup/__input-label/popup__input-label.css);
