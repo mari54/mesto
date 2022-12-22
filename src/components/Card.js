@@ -53,10 +53,8 @@ export class Card {
       this._handleRemoveCard();
     });
 
-    this._cardImg = this._newCard
-      .querySelector(".card__image")
-      .addEventListener("click", () => {
+    this._newCard.querySelector(".card__image").addEventListener("click", () => {
         this._openImage(this._imageLink, this._name);
-      });
+    });
   }
 }
