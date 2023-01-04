@@ -9,16 +9,21 @@
 <body class="page">
 
     <header class="header">
-      <img src="03b78ada3425e9132ff3.svg" alt="Логотип сервиса Mesto Россия" class="header__logo" />
+      <a href="#"><img src="03b78ada3425e9132ff3.svg" alt="Логотип сервиса Mesto Россия" class="header__logo" /></a>
     </header>
 
     <main class="content">
 
-      <section class="profile" aria-label="Профайл автора с аватаркой и формой редактирования и возможностью добавить фото">
-        <img class="profile__avatar" src="9d6adefb1210b21ebdf8.png" alt="Аватар профиля">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__about">Исследователь океана</p>
-        <button class="profile__btn-edit" type="button" title="Редактировать профиль"></button>
+      <section class="profile" aria-label="Профайл автора с аватаркой">
+        <div class="profile__avatar-wrapper">
+          <img class="profile__avatar" src="9d6adefb1210b21ebdf8.png" alt="Аватар профиля">
+          <div class="profile__avatar-edit"></div>
+        </div>
+        <div class="profile__info">
+          <h1 class="profile__name"></h1>
+          <button class="profile__btn-edit" type="button" title="Редактировать профиль"></button>
+          <p class="profile__about"></p>
+        </div>
         <button class="profile__btn-add" type="button" title="Добавить новую фотографию"></button>
       </section>
 
@@ -26,10 +31,13 @@
         <ul class="cards__list">
           <template id="template">
             <li class="card">
-              <img class="card__image" src="9787eeb8ccd4279ccfa9.jpg" alt="Фотография Карачаевска с башней">
+              <img class="card__image" src="" alt="">
               <div class="card__container">
-                <h2 class="card__title">Карачаевск</h2>
+                <h2 class="card__title"></h2>
+                <div class="card__like-wrapper">
                   <button class="card__like-button" type="button"></button>
+                  <p class="card__like-count"></p>
+                </div>
                   <button class="card__remove-button" type="button"></button>
               </div>
             </li>
@@ -81,11 +89,36 @@
         <button class="popup__btn-close" type="button" title="Закрыть"></button>
       </div>
     </section>
+
     <section class="popup popup_picture">
-      <div class="popup__box">
+      <div class="popup__image-wrapper">
         <button class="popup__btn-close" type="button"></button>
         <img src="#" class="popup__image" alt="">
         <p class="popup__description"></p>
+      </div>
+    </section>
+    <section class="popup popup_you-sure">
+      <div class="popup__container">
+        <h3 class="popup__title">Вы уверены?</h3>
+        <form class="popup__form form_you-sure">
+          <button class="popup__btn-save" type="submit" title="Да">Да</button>
+        </form>
+        <button class="popup__btn-close" type="button" title="Закрыть"></button>
+      </div>
+    </section>
+    <section class="popup popup_edit-avatar">
+      <div class="popup__container">
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form class="popup__form form_edit-avatar" name="avatar" novalidate>
+          <fieldset class="popup__fieldset">
+            <label class="popup__input-label">
+              <input class="popup__input popup__input_type_link" id="input-link" type="url" name="avatar" placeholder="https://somewebsite.com/someimage.jpg" required>
+              <span class="input-link-error popup__form-error"></span>
+            </label>
+          </fieldset>
+          <button class="popup__btn-save" type="submit" title="Сохранить">Сохранить</button>
+        </form>
+        <button class="popup__btn-close" type="button" title="Закрыть"></button>
       </div>
     </section>
 
