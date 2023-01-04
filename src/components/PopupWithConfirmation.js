@@ -3,7 +3,7 @@ import Popup from "./Popup.js";
 export default class PopupWithConfirmation extends Popup {
   constructor({ popupSelector, removeCardForSure }) {
     super(popupSelector);
-    this._form = this._popup.querySelector(".form_you-sure");
+    this._form = this._popup.querySelector(".popup__form_question");
     this._removeCardForSure = removeCardForSure;
   }
 
