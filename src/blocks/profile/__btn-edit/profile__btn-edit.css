@@ -5,14 +5,12 @@
   height: 100%;
   outline: none;
   border: 1px solid #ffffff;
-  margin-top: 37px;
-  margin-left: 18px;
+  margin-bottom: 8px;
   padding: 0;
   cursor: pointer;
   background: transparent url(../../../images/profile__btn-edit.svg) center center / 10px no-repeat;
   transition: opacity 0.2s linear;
-  grid-row: 1/2;
-  grid-column: 3/4;
+  align-self: flex-end;
 }
 
 .profile__btn-edit:hover {
@@ -20,19 +18,13 @@
 }
 
 @media screen and (max-width: 960px) {
-  .profile__btn-edit {
-    margin-top: 26px;
+  .profile__edit-btn {
+    margin-bottom: 9px;
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 550px) {
   .profile__btn-edit {
-    width: 18px;
     height: 18px;
-    grid-row: 2/3;
-    grid-column: 2/3;
-    margin: 34px 0 0 0;
-    padding: 0;
-    background-size: 7.5px 7.5px;
   }
 }
