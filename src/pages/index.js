@@ -72,7 +72,8 @@ function handlePlaceSubmitForm(data) {
       cardsList.addItem(createCard(res));
       popupPlace.close();
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error))
+    .finally(() => popupPlace.handleButtonText(false))
 }
 
 function handleAvatarForm(data) {
@@ -82,7 +83,8 @@ function handleAvatarForm(data) {
       userProfile.setUserInfo(res);
       popupAvatar.close();
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error))
+    .finally(() => popupAvatar.handleButtonText(false))
 }
 
 const userProfile = new UserInfo({profileName, profileAbout, profileAvatar });
@@ -94,7 +96,8 @@ function handleProfileSubmitForm(profileData) {
     userProfile.setUserInfo(res);
     popupProfile.close();
   })
-  .catch((error) => console.log(error));
+  .catch((error) => console.log(error))
+  .finally(() => popupProfile.handleButtonText(false))
 }
 
 // Метод открытия изображения в большое
@@ -156,7 +159,6 @@ function createCard(item) {
 // Cлушатели событий
 buttonAddPic.addEventListener("click", () => {
   newCardValidation.resetValidation();
-  popupPlace.handleButtonText(false);
   popupPlace.open();
 });
 
@@ -165,12 +167,10 @@ buttonEdit.addEventListener("click", () => {
   nameInput.value = userProfileData.name;
   infoInput.value = userProfileData.about;
   profileValidation.resetValidation();
-  popupProfile.handleButtonText(false);
   popupProfile.open();
 });
 
 buttonAvatar.addEventListener("click", () => {
   newAvatarValidation.resetValidation();
-  popupAvatar.handleButtonText(false);
   popupAvatar.open();
 });
