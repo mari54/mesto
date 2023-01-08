@@ -34,7 +34,7 @@ export default class PopupWithForm extends Popup {
 
   handleButtonText(isLoading) {
     isLoading
-      ? (this._submitButton.textContent = this._submitText)
-      : (this._submitButton.textContent = "Сохранение...");
+      ? (this._submitButton.textContent = "Сохранение...")
+      : (this._submitButton.textContent = this._submitText);
   }
 }
